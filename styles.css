@@ -51,7 +51,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Smooth transition for theme switching */
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -90,7 +89,7 @@ nav {
     top: 0;
     z-index: 1000;
     background-color: var(--bg-nav);
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0,0,0,0.05);
     border-bottom: 1px solid var(--border-color);
 }
@@ -118,7 +117,6 @@ nav {
     color: var(--accent-color);
 }
 
-/* Icons in Nav */
 .nav-icons {
     display: flex;
     gap: 1.5rem;
@@ -151,7 +149,7 @@ nav {
    ========================================= */
 
 section {
-    padding: 7rem 10% 4rem; /* Top padding clears the fixed nav */
+    padding: 7rem 10% 4rem; /* Top padding clears fixed nav */
     min-height: 80vh;
 }
 
@@ -172,13 +170,12 @@ h2 {
     margin-bottom: 2.5rem;
 }
 
-/* Underline effect for H2 */
 h2::after {
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 40%; /* Only underline part of the text */
+    width: 40%;
     height: 3px;
     background-color: var(--accent-color);
     border-radius: 2px;
@@ -193,7 +190,6 @@ p {
    5. COMPONENTS (Buttons, Cards, Badges)
    ========================================= */
 
-/* Buttons */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
@@ -204,18 +200,15 @@ p {
     font-weight: 600;
     cursor: pointer;
     background: transparent;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: rgba(100, 255, 218, 0.1); /* Subtle background tint on hover */
-    /* Note: In light mode with blue accent, this tint might need adjustment 
-       or use simple opacity. Let's make it generic: */
     background-color: var(--bg-card);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Cards */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -233,10 +226,9 @@ p {
 
 .card:hover {
     transform: translateY(-7px);
-    border-color: var(--accent-color); /* Highlight border on hover */
+    border-color: var(--accent-color);
 }
 
-/* Badges (Skills/Tags) */
 .badge {
     background-color: transparent;
     border: 1px solid var(--accent-color);
@@ -252,36 +244,184 @@ p {
 
 .badge:hover {
     background-color: var(--accent-color);
-    color: var(--bg-body); /* Inverts color on hover */
+    color: var(--bg-body);
 }
 
 /* =========================================
-   6. SPECIFIC SECTIONS
+   6. HERO SECTION (UPDATED: Split Layout)
    ========================================= */
 
-/* Hero */
+/* =========================================
+   HERO SECTION: STYLISTIC SPLIT LAYOUT
+   ========================================= */
+
 .hero {
     display: flex;
-    align-items: center;
+    align-items: center;            /* Center vertically */
+    justify-content: space-between; /* Push text left, image right */
+    gap: 4rem;                      /* Space between text and image */
+    min-height: 85vh;
+    padding-top: 100px;             /* Clear the fixed nav */
+    position: relative;
+    overflow: hidden;               /* Contains the blob shape */
+}
+
+/* --- Left Side: Text Styling --- */
+.hero-text-wrapper {
+    flex: 1;                        /* Takes up 50-60% width */
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;         /* Stacks Name, Title, Bio vertically */
+    gap: 1rem;                      /* Spacing between text elements */
+    z-index: 2;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: -10px;           /* Pulls name closer */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-name {
+    font-size: 4rem;                /* Big bold name */
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin: 0;
+    border: none;                   /* Removes the underline from h2 global style */
+}
+
+.hero-title::after {
+    display: none;                  /* Removes the underline accent */
+}
+
+.hero-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 90%;
+    margin-top: 1rem;
+}
+
+.hero-bio strong {
+    color: var(--accent-color);
+}
+
+/* --- Buttons --- */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white; /* Force white text on primary button */
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+.btn-secondary {
+    border: 1px solid var(--text-secondary);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* --- Right Side: Image Styling --- */
+.hero-image-wrapper {
+    flex: 1;                        /* Takes remaining width */
+    display: flex;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 100vh;
-    padding-top: 0; /* Centered vertically */
+    align-items: center;
+    position: relative;
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 380px;
+    height: 380px;
     object-fit: cover;
-    border: 2px solid var(--accent-color);
-    padding: 5px; /* Gap between image and border */
-    margin-bottom: 2rem;
-    background-color: var(--bg-card);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic Shape */
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);       /* Offset shadow */
+    z-index: 2;
+    transition: all 0.5s ease;
+    border: 5px solid rgba(255,255,255,0.5);
 }
 
-/* Carousel */
+.profile-img:hover {
+    border-radius: 50%; /* Morphs to circle on hover */
+    transform: scale(1.02);
+}
+
+/* --- The Stylistic "Blob" Background --- */
+.blob-shape {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--accent-color);
+    opacity: 0.1;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 968px) {
+    .hero {
+        flex-direction: column-reverse; /* Image Top, Text Bottom */
+        text-align: center;
+        gap: 3rem;
+        padding-top: 120px;
+    }
+
+    .hero-text-wrapper {
+        align-items: center;        /* Centers text stack */
+        width: 100%;
+    }
+
+    .hero-bio {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-img {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .hero-name {
+        font-size: 2.8rem;
+    }
+}
+/* =========================================
+   7. UTILITIES & ANIMATIONS
+   ========================================= */
+
 .carousel-container {
     position: relative;
     max-width: 100%;
@@ -324,7 +464,6 @@ p {
 .prev { left: 0; }
 .next { right: 0; }
 
-/* Forms */
 form {
     display: flex;
     flex-direction: column;
@@ -348,11 +487,6 @@ input:focus, textarea:focus {
     border-color: var(--accent-color);
 }
 
-/* =========================================
-   7. ANIMATIONS & FOOTER
-   ========================================= */
-
-/* Animation Utility Classes */
 .hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -364,7 +498,6 @@ input:focus, textarea:focus {
     transform: translateY(0);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
@@ -391,9 +524,47 @@ footer {
 }
 
 /* =========================================
-   8. MEDIA QUERIES (Mobile)
+   8. MEDIA QUERIES (Responsive Logic)
    ========================================= */
 
+/* Hero Section Breakpoint (900px) */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse; /* Stack: Image Top, Text Bottom */
+        justify-content: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-image-container::before {
+        width: 270px;
+        height: 270px;
+        right: auto;
+    }
+}
+
+/* Mobile Nav Breakpoint (768px) */
 @media (max-width: 768px) {
     section {
         padding: 6rem 5% 3rem;
@@ -419,11 +590,8 @@ footer {
     .hamburger {
         display: block;
     }
-    
+
     .nav-icons {
         gap: 1rem;
     }
-
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
 }

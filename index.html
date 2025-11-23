@@ -19,44 +19,66 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div style="display: flex; gap: 1rem; align-items: center;">
-            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
             <div class="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
     <section class="hero hidden">
-        <img src="assets/profile.jpg" alt="Suvojit Baidya" class="profile-img">
-        <h1>Suvojit Baidya</h1>
-        <h3>Mechanical Engineer | Researcher | Formula SAE Captain</h3>
-        <p style="max-width: 600px; margin: 1rem auto; color: var(--text-secondary);">
-    B.Sc. Mechanical Engineering (KUET). Specializing in Additive Manufacturing, FEA, and Bio-inspired structures. Captain of Team Kilo Flight (Formula SAE).
-        </p>
-        <div style="margin-top: 1rem;">
-            <a href="assets/cv.pdf" download class="btn"><i class="fas fa-download"></i> Download CV</a>
+        
+        <div class="hero-text-wrapper">
+            <p class="greeting">Hello, I am</p>
+            <h1 class="hero-name">Suvojit Baidya</h1>
+            <h2 class="hero-title">Mechanical Engineer & Researcher</h2>
+            
+            <p class="hero-bio">
+                B.Sc. Mechanical Engineering (KUET). Specializing in <strong>Additive Manufacturing</strong>, <strong>FEA</strong>, and <strong>Bio-inspired structures</strong>. 
+                <br>
+                Former Captain of Team Kilo Flight (Formula SAE).
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="assets/cv.pdf" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    Contact Me
+                </a>
+            </div>
         </div>
+
+        <div class="hero-image-wrapper">
+            <div class="blob-shape"></div>
+            <img src="assets/profile.jpg" alt="Suvojit Baidya" class="profile-img">
+        </div>
+
     </section>
 
     <section class="hidden">
         <h2>Explore My Portfolio</h2>
         <div class="card-grid">
+            
             <a href="research.html" class="card">
                 <span class="badge">Publications</span>
                 <h3>Research Highlights</h3>
                 <p>Sandwich Structures, Origami Engineering, and Flyash-Reinforcement studies.</p>
-                <br><small style="color: var(--accent-color);">View 4+ Projects &rarr;</small>
+                <br><small style="color: var(--accent-color);">View Projects &rarr;</small>
             </a>
+            
             <a href="experience.html" class="card">
                 <span class="badge">Leadership</span>
                 <h3>Formula SAE</h3>
                 <p>Captain of Team Kilo Flight. Led the first EV design and international participation in FSAE Japan.</p>
                 <br><small style="color: var(--accent-color);">View Timeline &rarr;</small>
             </a>
+            
             <a href="skills.html" class="card">
                 <span class="badge">Expertise</span>
                 <h3>Technical Skills</h3>
                 <p>ANSYS, SolidWorks, Python, and Additive Manufacturing proficiency.</p>
                 <br><small style="color: var(--accent-color);">View Badges &rarr;</small>
             </a>
+
         </div>
     </section>
 
