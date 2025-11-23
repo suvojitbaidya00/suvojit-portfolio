@@ -4,41 +4,25 @@
 
 /* --- LIGHT MODE (Default) --- */
 :root {
-    /* Core Layout Colors */
     --bg-body: #ffffff;
     --bg-nav: rgba(255, 255, 255, 0.95);
-    --bg-card: #f8f9fa; /* Very light grey */
-    
-    /* Text Colors */
+    --bg-card: #f8f9fa;
     --text-main: #2d3436;
     --text-secondary: #636e72;
-    
-    /* ACCENT COLOR (Light Mode) -> Professional Academic Blue */
     --accent-color: #0056b3; 
-    
-    /* UI Elements */
     --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
     --border-color: #e0e0e0;
-    
-    /* Font Settings */
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* --- DARK MODE (Overrides) --- */
 [data-theme="dark"] {
-    /* Core Layout Colors */
-    --bg-body: #0a192f; /* Deep Navy */
+    --bg-body: #0a192f;
     --bg-nav: rgba(10, 25, 47, 0.95);
-    --bg-card: #112240; /* Lighter Navy */
-    
-    /* Text Colors */
-    --text-main: #ccd6f6; /* Light Blue/White */
-    --text-secondary: #8892b0; /* Slate Grey */
-    
-    /* ACCENT COLOR (Dark Mode) -> Neon Green/Cyan */
+    --bg-card: #112240;
+    --text-main: #ccd6f6;
+    --text-secondary: #8892b0;
     --accent-color: #64ffda; 
-    
-    /* UI Elements */
     --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     --border-color: #233554;
 }
@@ -149,7 +133,7 @@ nav {
    ========================================= */
 
 section {
-    padding: 7rem 10% 4rem; /* Top padding clears fixed nav */
+    padding: 7rem 10% 4rem;
     min-height: 80vh;
 }
 
@@ -248,31 +232,26 @@ p {
 }
 
 /* =========================================
-   6. HERO SECTION (UPDATED: Split Layout)
-   ========================================= */
-
-/* =========================================
-   HERO SECTION: STYLISTIC SPLIT LAYOUT
+   6. HERO SECTION
    ========================================= */
 
 .hero {
     display: flex;
-    align-items: center;            /* Center vertically */
-    justify-content: space-between; /* Push text left, image right */
-    gap: 4rem;                      /* Space between text and image */
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
     min-height: 85vh;
-    padding-top: 100px;             /* Clear the fixed nav */
+    padding-top: 100px;
     position: relative;
-    overflow: hidden;               /* Contains the blob shape */
+    overflow: hidden;
 }
 
-/* --- Left Side: Text Styling --- */
 .hero-text-wrapper {
-    flex: 1;                        /* Takes up 50-60% width */
+    flex: 1;
     max-width: 650px;
     display: flex;
-    flex-direction: column;         /* Stacks Name, Title, Bio vertically */
-    gap: 1rem;                      /* Spacing between text elements */
+    flex-direction: column;
+    gap: 1rem;
     z-index: 2;
 }
 
@@ -280,13 +259,13 @@ p {
     font-size: 1.2rem;
     color: var(--accent-color);
     font-weight: 600;
-    margin-bottom: -10px;           /* Pulls name closer */
+    margin-bottom: -10px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .hero-name {
-    font-size: 4rem;                /* Big bold name */
+    font-size: 4rem;
     font-weight: 800;
     color: var(--text-main);
     line-height: 1.1;
@@ -298,12 +277,10 @@ p {
     font-weight: 400;
     color: var(--text-secondary);
     margin: 0;
-    border: none;                   /* Removes the underline from h2 global style */
+    border: none;
 }
 
-.hero-title::after {
-    display: none;                  /* Removes the underline accent */
-}
+.hero-title::after { display: none; }
 
 .hero-bio {
     font-size: 1.1rem;
@@ -313,11 +290,8 @@ p {
     margin-top: 1rem;
 }
 
-.hero-bio strong {
-    color: var(--accent-color);
-}
+.hero-bio strong { color: var(--accent-color); }
 
-/* --- Buttons --- */
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
@@ -326,7 +300,7 @@ p {
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: white; /* Force white text on primary button */
+    color: white;
     border: 1px solid var(--accent-color);
 }
 
@@ -345,9 +319,8 @@ p {
     color: var(--accent-color);
 }
 
-/* --- Right Side: Image Styling --- */
 .hero-image-wrapper {
-    flex: 1;                        /* Takes remaining width */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -358,19 +331,18 @@ p {
     width: 380px;
     height: 380px;
     object-fit: cover;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic Shape */
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);       /* Offset shadow */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
     z-index: 2;
     transition: all 0.5s ease;
     border: 5px solid rgba(255,255,255,0.5);
 }
 
 .profile-img:hover {
-    border-radius: 50%; /* Morphs to circle on hover */
+    border-radius: 50%;
     transform: scale(1.02);
 }
 
-/* --- The Stylistic "Blob" Background --- */
 .blob-shape {
     position: absolute;
     width: 500px;
@@ -386,40 +358,7 @@ p {
 }
 
 /* =========================================
-   MOBILE RESPONSIVENESS
-   ========================================= */
-@media (max-width: 968px) {
-    .hero {
-        flex-direction: column-reverse; /* Image Top, Text Bottom */
-        text-align: center;
-        gap: 3rem;
-        padding-top: 120px;
-    }
-
-    .hero-text-wrapper {
-        align-items: center;        /* Centers text stack */
-        width: 100%;
-    }
-
-    .hero-bio {
-        max-width: 100%;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .profile-img {
-        width: 280px;
-        height: 280px;
-    }
-    
-    .hero-name {
-        font-size: 2.8rem;
-    }
-}
-/* =========================================
-   7. UTILITIES & ANIMATIONS
+   7. UTILITIES & ANIMATIONS (CAROUSEL FIX)
    ========================================= */
 
 .carousel-container {
@@ -429,17 +368,24 @@ p {
     margin-bottom: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    background-color: var(--bg-body);
 }
 
 .carousel-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    /* FIX: Force specific height for consistent aspect ratio box */
+    height: 400px; 
 }
 
 .carousel-slide img {
+    /* FIX: Contain image inside the box without stretching */
+    min-width: 100%;
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain; 
+    object-position: center;
+    background-color: var(--bg-body);
 }
 
 .carousel-btn {
@@ -457,10 +403,7 @@ p {
     transition: background 0.3s;
 }
 
-.carousel-btn:hover {
-    background: var(--accent-color);
-}
-
+.carousel-btn:hover { background: var(--accent-color); }
 .prev { left: 0; }
 .next { right: 0; }
 
@@ -507,16 +450,12 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-.social-links {
-    margin-bottom: 1rem;
-}
-
+.social-links { margin-bottom: 1rem; }
 .social-links a {
     color: var(--text-secondary);
     margin: 0 12px;
     font-size: 1.4rem;
 }
-
 .social-links a:hover {
     color: var(--accent-color);
     transform: translateY(-3px);
@@ -524,52 +463,29 @@ footer {
 }
 
 /* =========================================
-   8. MEDIA QUERIES (Responsive Logic)
+   8. MEDIA QUERIES (Responsive)
    ========================================= */
 
-/* Hero Section Breakpoint (900px) */
 @media (max-width: 900px) {
     .hero {
-        flex-direction: column-reverse; /* Stack: Image Top, Text Bottom */
+        flex-direction: column-reverse;
         justify-content: center;
         text-align: center;
         gap: 3rem;
         padding-top: 120px;
     }
-
     .hero-content {
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .profile-img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .hero-image-container::before {
-        width: 270px;
-        height: 270px;
-        right: auto;
-    }
+    .hero-buttons { justify-content: center; }
+    .profile-img { width: 250px; height: 250px; }
 }
 
-/* Mobile Nav Breakpoint (768px) */
 @media (max-width: 768px) {
-    section {
-        padding: 6rem 5% 3rem;
-    }
-
+    section { padding: 6rem 5% 3rem; }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -582,16 +498,43 @@ footer {
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         border-bottom: 1px solid var(--border-color);
     }
+    .nav-links.active { display: flex; }
+    .hamburger { display: block; }
+    .nav-icons { gap: 1rem; }
+}
 
-    .nav-links.active {
-        display: flex;
-    }
+/* =========================================
+   9. DYNAMIC RESEARCH VIEWER STYLES
+   ========================================= */
 
-    .hamburger {
-        display: block;
-    }
+.featured-card {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border: 2px solid var(--accent-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
 
-    .nav-icons {
-        gap: 1rem;
-    }
+.clickable-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    opacity: 0.9;
+}
+
+.clickable-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    background-color: var(--bg-body);
+    opacity: 1;
+}
+
+.badge.review { background-color: #f1c40f; color: #000; }
+.badge.ready { background-color: #2ecc71; color: #fff; }
+.badge.progress { background-color: #3498db; color: #fff; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

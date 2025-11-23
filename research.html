@@ -19,14 +19,15 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div style="display: flex; gap: 1rem; align-items: center;">
-            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
             <div class="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
     <section class="hidden">
         <h1>Research Interests</h1>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 3rem;">
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem;">
             <span class="badge">Additive Manufacturing</span>
             <span class="badge">Finite Element Analysis</span>
             <span class="badge">Sandwich Structures</span>
@@ -38,58 +39,15 @@
             <span class="badge">Topology Optimization</span>
         </div>
 
-        <h2>Under Review</h2>
-        <div class="card hidden">
-            <h3>Flyash-Reinforced Core of 3D-Printed PETG/WPLA Honeycomb Sandwich Structure</h3>
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="https://via.placeholder.com/800x400?text=Simulation+Contour+1" alt="Simulation">
-                    <img src="https://via.placeholder.com/800x400?text=Experimental+Setup" alt="Experiment">
-                </div>
-                <button class="carousel-btn prev">&#10094;</button>
-                <button class="carousel-btn next">&#10095;</button>
-            </div>
-            <ul>
-                <li>Simulated and validated force displacement and MOE of sandwich structures.</li>
-                <li>Analyzed energy absorption variation and failure modes with/without flyash reinforcements.</li>
-            </ul>
-        </div>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+            <i class="fas fa-info-circle"></i> Click on any project in the list below to view the full details.
+        </p>
+        
+        <div id="featured-research"></div>
 
-        <h2 style="margin-top: 3rem;">Ready to Submit</h2>
-        <div class="card-grid">
-            <div class="card hidden">
-                <h3>Miura-Ori Inspired Origami Structure</h3>
-                <p>Experimental and numerical investigation on effect of radius of curvature.</p>
-                <ul style="margin-top: 1rem; margin-left: 1rem; color: var(--text-secondary);">
-                    <li>Modeled curved-crease Miura-Ori panels with varied crease radius.</li>
-                    <li>Analyzed Quasi-static and Cyclic compression behavior focusing on SEA and Recoverability.</li>
-                </ul>
-            </div>
-            <div class="card hidden">
-                <h3>Bending Behavior of Honeycomb Sandwich Structures</h3>
-                <p>Effect of Material Orientation and Core Geometry (PLA+ and ABS-based).</p>
-                <ul style="margin-top: 1rem; margin-left: 1rem; color: var(--text-secondary);">
-                    <li>Optimized Energy Absorption (EA) for various cell thicknesses.</li>
-                    <li>Numerically studied flexural tests of honeycomb structures.</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2 style="margin-top: 3rem;">In Progress</h2>
-        <div class="card-grid">
-            <div class="card hidden">
-                <h3>Octopus Suction-Cup-Inspired Sandwich Cores</h3>
-                <p>Generated bio-inspired cores with tunable cavity diameter. Measured SEA, stress under quasi-static compression; validated with Ansys. Performing geometry optimization to balance stiffness-to-weight.</p>
-            </div>
-            
-            <div class="card hidden">
-                <h3>Compressive Response of Honeycomb Structures</h3>
-                <p><strong>Full Title:</strong> Compressive Response of Material Orientation and Core Geometry on Bending Behaviour of PLA+ and ABS Based 3D-Printed Honeycomb Sandwich Structure.</p>
-                <ul style="margin-top: 1rem; margin-left: 1rem; color: var(--text-secondary);">
-                    <li>Establishing and analyzing rate-independent FE correlations to predict onset of densification and post-yield behavior.</li>
-                </ul>
-            </div>
-        </div>
+        <h2 style="margin-top: 3rem; border-bottom: none;">More Projects</h2>
+        
+        <div id="research-list" class="card-grid"></div>
 
     </section>
 
