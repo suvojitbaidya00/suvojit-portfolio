@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Suvojit Baidya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SB.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html" class="active">Research</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="hidden">
+        <h1>Research Interests</h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 3rem;">
+            <span class="badge">Additive Manufacturing</span>
+            <span class="badge">Finite Element Analysis</span>
+            <span class="badge">Sandwich Structures</span>
+            <span class="badge">Origami Structures</span>
+            <span class="badge">Smart Materials</span>
+            <span class="badge">Composite Materials</span>
+            <span class="badge">Dynamic Analysis</span>
+            <span class="badge">Biomaterials</span>
+            <span class="badge">Topology Optimization</span>
+        </div>
+
+        [cite_start]<h2>Under Review [cite: 9]</h2>
+        <div class="card hidden">
+            [cite_start]<h3>Flyash-Reinforced Core of 3D-Printed PETG/WPLA Honeycomb Sandwich Structure [cite: 10]</h3>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="https://via.placeholder.com/800x400?text=Simulation+Contour+1" alt="Simulation">
+                    <img src="https://via.placeholder.com/800x400?text=Experimental+Setup" alt="Experiment">
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <ul>
+                [cite_start]<li>Simulated and validated force displacement and MOE of sandwich structures[cite: 11].</li>
+                [cite_start]<li>Analyzed energy absorption variation and failure modes with/without flyash reinforcements[cite: 12].</li>
+            </ul>
+        </div>
+
+        [cite_start]<h2 style="margin-top: 3rem;">Ready to Submit [cite: 13]</h2>
+        <div class="card-grid">
+            <div class="card hidden">
+                [cite_start]<h3>Miura-Ori Inspired Origami Structure [cite: 23]</h3>
+                <p>Experimental and numerical investigation on effect of radius of curvature.</p>
+                <ul style="margin-top: 1rem; margin-left: 1rem; color: var(--text-secondary);">
+                    [cite_start]<li>Modeled curved-crease Miura-Ori panels with varied crease radius[cite: 24].</li>
+                    [cite_start]<li>Analyzed Quasi-static and cyclic compression behavior focusing on SEA and hysteresis[cite: 25].</li>
+                </ul>
+            </div>
+            <div class="card hidden">
+                [cite_start]<h3>Bending Behavior of Honeycomb Sandwich Structures [cite: 14]</h3>
+                <p>Effect of Material Orientation and Core Geometry (PLA+ and ABS-based).</p>
+                <ul style="margin-top: 1rem; margin-left: 1rem; color: var(--text-secondary);">
+                    [cite_start]<li>Optimized Energy Absorption (EA) for various cell thicknesses[cite: 16].</li>
+                    [cite_start]<li>Numerically studied flexural tests of honeycomb structures[cite: 17].</li>
+                </ul>
+            </div>
+        </div>
+
+        [cite_start]<h2 style="margin-top: 3rem;">In Progress [cite: 18]</h2>
+        <div class="card hidden">
+            [cite_start]<h3>Octopus Suction-Cup-Inspired Sandwich Cores [cite: 19]</h3>
+            <p>Generated bio-inspired cores with tunable cavity diameter. [cite_start]Measured SEA, plateau stress under quasi-static compression; validated with Ansys[cite: 20, 21]. [cite_start]Performing geometry optimization to balance stiffness-to-weight[cite: 22].</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Suvojit Baidya.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

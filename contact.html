@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Suvojit Baidya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SB.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="hero hidden" style="height: auto; min-height: 80vh;">
+        <h1>Get In Touch</h1>
+        [cite_start]<p>Currently based in Khulna, Bangladesh[cite: 3].</p>
+        
+        <form id="contact-form" style="margin-top: 2rem; width: 100%;">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="5" placeholder="Message" required></textarea>
+            <button type="submit" class="btn" style="background: var(--accent-color); color: var(--primary-color);">Send Message</button>
+        </form>
+
+        <div style="margin-top: 3rem;">
+            <h3>Contact Info</h3>
+            [cite_start]<p><i class="fas fa-envelope"></i> suvojitbaidya00@gmail.com [cite: 3]</p>
+            <div class="social-links" style="margin-top: 1rem;">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Suvojit Baidya.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
