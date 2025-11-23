@@ -24,42 +24,136 @@
         </div>
     </nav>
 
-    <section class="hidden">
-        <h1>Leadership & Experience</h1>
+    <!-- NEW COVER IMAGE SECTION -->
+    <div class="experience-cover">
+        <div class="cover-overlay"></div>
+        <!-- IMPORTANT: Convert your .heif to .jpg and save as assets/IMG_9011.jpg -->
+        <img src="assets/cover.jpg" alt="Experience Cover" class="cover-img" onerror="this.src='https://via.placeholder.com/1920x600?text=Convert+HEIF+to+JPG'">
+        <div class="cover-content">
+            <h1>Professional Experience</h1>
+            <p>A timeline of my leadership roles, academic collaborations, and engineering projects.</p>
+        </div>
+    </div>
 
-        <div class="card" style="margin-bottom: 2rem;">
-            <h2>Captain, Team Kilo Flight (Formula SAE)</h2>
-            <p><strong>KUET | 2024 – 2025</strong></p>
-            <ul>
-                <li>Directed cross-functional subteams (chassis, aero, powertrain) from concept to build planning.</li>
-                <li>Design & Development of First EV: Developed chassis/composite assembly, applied CFD/FEA, prepared BOM.</li>
-            </ul>
+    <section class="hidden" style="padding-top: 4rem;">
+        
+        <!-- 1. HORIZONTAL TIMELINE (TITLES ONLY) -->
+        <div class="horizontal-timeline-container">
+            <div class="horizontal-timeline">
+                
+                <!-- Item 1 -->
+                <div class="h-timeline-item">
+                    <div class="h-date">2024 - 2025</div>
+                    <div class="h-content-simple">
+                        <h3>Captain | Team Kilo Flight</h3>
+                        <p class="h-loc">Formula SAE</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="h-timeline-item">
+                    <div class="h-date">2023 - 2024</div>
+                    <div class="h-content-simple">
+                        <h3>Business Analyst</h3>
+                        <p class="h-loc">Team Kilo Flight</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="h-timeline-item">
+                    <div class="h-date">2023 - Present</div>
+                    <div class="h-content-simple">
+                        <h3>Uni. Collaboration</h3>
+                        <p class="h-loc">Eastern University</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="h-timeline-item">
+                    <div class="h-date">2023</div>
+                    <div class="h-content-simple">
+                        <h3>FSAE Japan</h3>
+                        <p class="h-loc">Shizuoka, Japan</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="card" style="margin-bottom: 2rem;">
-            <h2>Formula SAE Japan 2023</h2>
-            <p><strong>Shizuoka, Japan</strong></p>
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="https://via.placeholder.com/800x300?text=FSAE+Japan+Team" alt="FSAE Japan">
+        <!-- 2. DETAILED CARDS SECTION (Stacked Layout) -->
+        <h2 style="margin-top: 4rem; border-bottom: 2px solid var(--accent-color); display: inline-block;">Detailed Overview</h2>
+        
+        <div class="experience-card-list">
+            
+            <!-- Card 1 -->
+            <div class="card full-width-card">
+                <span class="badge" style="background: var(--accent-color); color: white;">Leadership</span>
+                <h3>Captain | Team Kilo Flight (Formula SAE)</h3>
+                <p class="timeline-loc">KUET, Bangladesh | 2024 - 2025</p>
+                
+                <div class="card-body-flex">
+                    <div class="card-text-content">
+                        <ul>
+                            <li>Directed cross-functional subteams (chassis, aero, powertrain) from concept to design reviews and build planning.</li>
+                            <li><strong>Design & Development of Formula SAE EV:</strong> Led the first EV design; developed chassis and composite with structured assembly and testing.</li>
+                            <li>Applied CFD and FEA to guide bodywork and structural decisions; prepared manufacturing drawings and BOM.</li>
+                        </ul>
+                    </div>
+                    <!-- Image on Right -->
+                    <div class="card-image-placeholder">
+                        <i class="fas fa-image fa-2x"></i> <span>Add Image Later</span>
+                    </div>
                 </div>
             </div>
-            <p>Ranked 30th of 77 teams. Cleared Mechanical Inspection as a First Year Vehicle – first team from Bangladesh to do so.</p>
-        </div>
 
-        <div class="card" style="margin-bottom: 2rem;">
-            <h2>Collaborations & Projects</h2>
-            <div class="card-grid" style="margin-top: 1rem;">
-                <div>
-                    <h3>Eastern University, Dhaka</h3>
-                    <p>Feasibility testing for low-power auto-rickshaw concepts tailored to Dhaka’s duty cycles.</p>
-                </div>
-                <div>
-                    <h3>Guest Speaker</h3>
-                    <p>Automobile Engineering Seminar, Khulna University Innovation Club.</p>
+            <!-- Card 2 -->
+            <div class="card full-width-card">
+                <span class="badge" style="background: var(--accent-color); color: white;">Management</span>
+                <h3>Business & Marketing Analyst</h3>
+                <p class="timeline-loc">Team Kilo Flight (KUET) | 2023 - 2024</p>
+                
+                <div class="card-text-content">
+                    <ul>
+                        <li>Supported budgeting, sponsorship collateral, and event communications to sustain team operations.</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- Card 3 -->
+            <div class="card full-width-card">
+                <span class="badge" style="background: var(--accent-color); color: white;">Collaboration</span>
+                <h3>University Collaboration</h3>
+                <p class="timeline-loc">Eastern University, Dhaka | 2023 - Present</p>
+                
+                <div class="card-text-content">
+                    <ul>
+                        <li>Feasibility testing for low-power auto-rickshaw concepts tailored to Dhaka’s duty cycles.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card full-width-card">
+                <span class="badge" style="background: var(--accent-color); color: white;">Competition</span>
+                <h3>Formula SAE Japan</h3>
+                <p class="timeline-loc">Shizuoka, Japan | 2023</p>
+                
+                <div class="card-body-flex">
+                    <div class="card-text-content">
+                        <ul>
+                            <li>Secured 30th of 77 teams.</li>
+                            <li>Cleared Mechanical Inspection as a First Year Vehicle: first team from Bangladesh to achieve this milestone.</li>
+                        </ul>
+                    </div>
+                    <!-- Image on Right -->
+                    <div class="card-image-placeholder">
+                        <i class="fas fa-image fa-2x"></i> <span>Add Image Later</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </section>
 
     <footer>
