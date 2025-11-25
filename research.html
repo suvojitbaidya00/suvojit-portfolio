@@ -6,9 +6,19 @@
     <title>Research | Suvojit Baidya</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8G4DQKG70"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T8G4DQKG70');
+    </script>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo">SB.</a>
         <ul class="nav-links">
@@ -24,9 +34,11 @@
         </div>
     </nav>
 
+    <!-- Research Content -->
     <section class="hidden">
         <h1>Research Interests</h1>
         
+        <!-- Badges Section -->
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem;">
             <span class="badge">Additive Manufacturing</span>
             <span class="badge">Finite Element Analysis</span>
@@ -43,10 +55,14 @@
             <i class="fas fa-info-circle"></i> Click on any project in the list below to view the full details.
         </p>
         
+        <!-- 1. THE BIG "ACTIVE" CARD -->
+        <!-- JS will inject the currently selected project here -->
         <div id="featured-research"></div>
 
+        <!-- 2. THE LIST OF OTHER CARDS -->
         <h2 style="margin-top: 3rem; border-bottom: none;">More Projects</h2>
         
+        <!-- JS will inject the remaining projects here -->
         <div id="research-list" class="card-grid"></div>
 
     </section>
