@@ -63,7 +63,8 @@ const researchData = [
             "assets/flyash1.png",
             "assets/flyash2.png",
             "assets/flyash3.png",
-            "assets/flyash4.png"
+            "assets/flyash4.png",
+            "assets/flyash5.png",       
         ]
     },
     {
@@ -95,7 +96,7 @@ const researchData = [
             "assets/acps3.png", // Note: This is a .jpg file
             "assets/acps1.png",
             "assets/acps2.png",
-
+            "assets/acps4.png",
         ]
     },
     {
