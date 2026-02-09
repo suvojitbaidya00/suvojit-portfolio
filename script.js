@@ -110,10 +110,12 @@ const researchData = [
             "Measured SEA, plateau stress, and failure modes; validated with Ansys."
         ],
         images: [
+            "assets/oct5.png", // Note: .png
             "assets/oct1.jpg", // Note: .jpg
             "assets/oct2.jpg", // Note: .jpg
             "assets/oct3.png", // Note: .png
-            "assets/oct4.png"  // Note: .png
+            "assets/oct4.png",  // Note: .png
+            
         ]
     },
     {
