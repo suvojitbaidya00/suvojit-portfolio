@@ -230,3 +230,19 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+// Certificate Modal
+const certModal = document.getElementById('cert-modal');
+const modalImg = document.getElementById('modal-cert-image');
+const closeBtn = document.querySelector('.modal-close');
+
+document.querySelectorAll('.certificate-card').forEach(card => {
+    card.addEventListener('click', () => {
+        modalImg.src = card.getAttribute('data-src');
+        certModal.style.display = 'flex';
+    });
+});
+
+closeBtn.addEventListener('click', () => certModal.style.display = 'none');
+certModal.addEventListener('click', e => {
+    if (e.target === certModal) certModal.style.display = 'none';
+});
