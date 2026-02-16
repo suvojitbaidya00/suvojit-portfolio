@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,77 +35,111 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (Stylistic Layout) -->
-    <section class="hero hidden">
-        
-        <!-- Left Side: Text -->
-        <div class="hero-text-wrapper">
-            <p class="greeting">Hello, I am</p>
-            <h1 class="hero-name">Suvojit Baidya</h1>
-            <h2 class="hero-title">Mechanical Engineer & Researcher</h2>
-            
-            <p class="hero-bio">
-                B.Sc. Mechanical Engineering (KUET). Specializing in <strong>Additive Manufacturing</strong>, <strong>FEA</strong>, and <strong>Bio-inspired structures</strong>. 
-                <br>
-                Former Captain of Team Kilo Flight (Formula SAE).
-            </p>
-            
-            <div class="hero-buttons">
-                <a href="assets/cv.pdf" download class="btn btn-primary">
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-                <a href="contact.html" class="btn btn-secondary">
-                    Contact Me
-                </a>
+    <!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-text-wrapper">
+        <p class="greeting">Hello, I am</p>
+        <h1 class="hero-name">Suvojit Baidya</h1>
+        <h2 class="hero-title">Mechanical Engineer & Researcher</h2>
+        <p class="hero-bio">
+            I am a <strong>Mechanical Engineer</strong> driven by a passion for <strong>innovation</strong> and <strong>sustainability</strong> in engineering. My expertise spans <strong>Additive Manufacturing</strong>, <strong>Finite Element Analysis (FEA)</strong>, and <strong>Bio-inspired Structures</strong>, where I work to create solutions that address real-world challenges.
+            <br><br>
+            In addition to my technical background, I have had the privilege of leading <strong>Team Kilo Flight</strong> in the <strong>Formula SAE</strong> competition, where I pioneered the development of an electric vehicle (EV) from concept to design. This hands-on experience fueled my commitment to <strong>advanced engineering solutions</strong> aimed at sustainability and efficiency.
+        </p>
+        <div class="hero-buttons">
+            <a href="assets/cv.pdf" download class="btn btn-primary">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+                Contact Me
+            </a>
+        </div>
+    </div>
+    <div class="hero-image-wrapper">
+        <div class="blob-shape"></div>
+        <img src="assets/profile.jpg" alt="Suvojit Baidya" class="profile-img">
+    </div>
+</section>
+
+    <!-- Research Section (Bento Style Gallery) -->
+    <section id="research" class="bento-section">
+        <h2>Research Highlights</h2>
+        <div class="bento-gallery">
+            <div class="bento-item">
+                <img src="assets/flyash5.png" alt="Research Image 1">
+                <h3>Flyash-Reinforced Structures</h3>
+                <p>Experimental and numerical studies focusing on flyash-reinforced materials.</p>
+                <a href="research.html" class="btn btn-primary">Explore Research</a>
+            </div>
+            <div class="bento-item">
+                <img src="assets/origami1.png" alt="Research Image 2">
+                <h3>Origami Structures</h3>
+                <p>Study on the mechanical properties of origami-inspired engineering structures.</p>
+                <a href="research.html" class="btn btn-primary">Explore Research</a>
+            </div>
+            <div class="bento-item">
+                <img src="assets/oct5.png" alt="Research Image 3">
+                <h3>Sandwich Structures</h3>
+                <p>Investigation into the bending behavior and optimization of honeycomb sandwich structures.</p>
+                <a href="research.html" class="btn btn-primary">Explore Research</a>
             </div>
         </div>
-
-        <!-- Right Side: Image -->
-        <div class="hero-image-wrapper">
-            <div class="blob-shape"></div>
-            <img src="assets/profile.jpg" alt="Suvojit Baidya" class="profile-img">
-        </div>
-
     </section>
 
-    <!-- HIGHLIGHTS SECTION -->
-    <section class="hidden">
-        <h2>Explore My Portfolio</h2>
-        <div class="card-grid">
-            
-            <!-- Research Card -->
-            <a href="research.html" class="card">
-                <span class="badge">Publications</span>
-                <h3>Research Highlights</h3>
-                <p>Sandwich Structures, Origami Engineering, and Flyash-Reinforcement studies.</p>
-                <br><small style="color: var(--accent-color);">View Projects &rarr;</small>
-            </a>
-            
-            <!-- Experience Card -->
-            <a href="experience.html" class="card">
-                <span class="badge">Leadership</span>
-                <h3>Formula SAE</h3>
-                <p>Captain of Team Kilo Flight. Led the first EV design and international participation in FSAE Japan.</p>
-                <br><small style="color: var(--accent-color);">View Timeline &rarr;</small>
-            </a>
-            
-            <!-- Skills Card -->
-            <a href="skills.html" class="card">
-                <span class="badge">Expertise</span>
-                <h3>Technical Skills</h3>
-                <p>ANSYS, SolidWorks, Python, and Additive Manufacturing proficiency.</p>
-                <br><small style="color: var(--accent-color);">View Badges &rarr;</small>
-            </a>
+    <!-- Experience Section (Bento Style Gallery) -->
+    <section id="experience" class="bento-section">
+        <h2>Professional Experience</h2>
+        <div class="bento-gallery">
+            <div class="bento-item">
+                <img src="assets/japan.jpg" alt="Experience Image 1">
+                <h3>Team Kilo Flight - Captain</h3>
+                <p>Led the first EV design for Formula SAE, achieving global recognition in FSAE Japan.</p>
+                <a href="experience.html" class="btn btn-primary">Explore Experience</a>
+            </div>
+            <div class="bento-item">
+                <img src="assets/business.png" alt="Experience Image 2">
+                <h3>Business Analyst</h3>
+                <p>Coordinated financial planning and resource allocation for the team.</p>
+                <a href="experience.html" class="btn btn-primary">Explore Experience</a>
+            </div>
+            <div class="bento-item">
+                <img src="assets/chas.png" alt="Experience Image 3">
+                <h3>Chassis & Aerodynamics</h3>
+                <p>Designed and tested lightweight chassis using sustainable materials for the FSAE vehicle.</p>
+                <a href="experience.html" class="btn btn-primary">Explore Experience</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section (Bento Style Gallery) -->
+    <section id="skills" class="bento-section">
+        <h2>Technical Skills</h2>
+        <div class="bento-gallery">
+            <div class="bento-item">
+                <img src="assets/skills-image1.jpg" alt="Skills Image 1">
+                <h3>ANSYS & FEA</h3>
+                <p>Proficient in ANSYS for Finite Element Analysis in structural and thermal simulations.</p>
+                <a href="skills.html" class="btn btn-primary">Explore Skills</a>
+            </div>
+            <div class="bento-item">
+                <img src="assets/skills-image2.jpg" alt="Skills Image 2">
+                <h3>SolidWorks & CAD</h3>
+                <p>Expertise in CAD software for 3D modeling and product design.</p>
+                <a href="skills.html" class="btn btn-primary">Explore Skills</a>
+            </div>
+            <div class="bento-item">
+                <img src="assets/skills-image3.jpg" alt="Skills Image 3">
+                <h3>Python Programming</h3>
+                <p>Experience in Python for scripting, automation, and data analysis in engineering contexts.</p>
+                <a href="skills.html" class="btn btn-primary">Explore Skills</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-<footer>
-    <div style="display:flex; flex-wrap:wrap; gap: 1rem; justify-content:center; align-items:center;">
-        <p style="margin:0;">&copy; 2025 Suvojit Baidya.</p>
-
-        <div class="social-links" style="margin:0;">
+    <footer>
+        <p>&copy; 2025 Suvojit Baidya. All rights reserved.</p>
+        <div class="social-links">
             <a href="https://wa.me/8801712931179" target="_blank" rel="noopener" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
@@ -116,8 +150,8 @@
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
-    </div>
-</footer>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

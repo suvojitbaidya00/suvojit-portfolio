@@ -247,7 +247,7 @@ p {
 /* =========================================
    6. HERO SECTION (Stylistic Split Layout)
    ========================================= */
-
+/* Hero Section */
 .hero {
     display: flex;
     align-items: center;
@@ -257,17 +257,43 @@ p {
     padding-top: 100px;
     position: relative;
     overflow: hidden;
+    background-image: url('/mnt/data/kilo.jpg'), linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent); /* Background image with white vignette */
+    background-size: contain; /* Make image smaller */
+    background-position: right center; /* Focus on the right side */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/kilo.jpg'); /* Same image */
+    background-size: contain; /* Make image smaller */
+    background-position: right center; /* Focus on the right side */
+    opacity: 0.3; /* Adjust opacity to reduce image brightness */
+    filter: blur(5px); /* Optional: add blur to background image */
+    z-index: 1;
+}
+
+/* Hero Text Wrapper */
 .hero-text-wrapper {
     flex: 1;
     max-width: 650px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    z-index: 2;
+    z-index: 2; /* Ensures text stays on top */
+    background: rgba(255, 255, 255, 0.7); /* Slight transparency for readability */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
+/* Greeting Text */
 .greeting {
     font-size: 1.2rem;
     color: var(--accent-color);
@@ -277,6 +303,7 @@ p {
     letter-spacing: 2px;
 }
 
+/* Main Name */
 .hero-name {
     font-size: 4rem;
     font-weight: 800;
@@ -285,16 +312,15 @@ p {
     margin: 0;
 }
 
+/* Job Title */
 .hero-title {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--text-secondary);
     margin: 0;
-    border: none;
 }
 
-.hero-title::after { display: none; }
-
+/* Bio Text */
 .hero-bio {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -303,28 +329,40 @@ p {
     margin-top: 1rem;
 }
 
-.hero-bio strong { color: var(--accent-color); }
+.hero-bio strong {
+    color: var(--accent-color);
+}
 
+/* Buttons Section */
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
+/* Button Styling */
 .btn-primary {
     background-color: var(--accent-color);
     color: white;
     border: 1px solid var(--accent-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .btn-primary:hover {
     background-color: transparent;
     color: var(--accent-color);
+    border: 1px solid var(--accent-color);
 }
 
 .btn-secondary {
     border: 1px solid var(--text-secondary);
     color: var(--text-main);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .btn-secondary:hover {
@@ -332,6 +370,7 @@ p {
     color: var(--accent-color);
 }
 
+/* Hero Image Section */
 .hero-image-wrapper {
     flex: 1;
     display: flex;
@@ -344,11 +383,11 @@ p {
     width: 380px;
     height: 380px;
     object-fit: cover;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Shaped profile */
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.05); /* Soft shadow */
     z-index: 2;
     transition: all 0.5s ease;
-    border: 5px solid rgba(255,255,255,0.5);
+    border: 5px solid rgba(255, 255, 255, 0.5);
 }
 
 .profile-img:hover {
@@ -356,6 +395,7 @@ p {
     transform: scale(1.02);
 }
 
+/* Blob Shape Behind Profile Image */
 .blob-shape {
     position: absolute;
     width: 500px;
@@ -368,6 +408,29 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 120px;
+    }
+
+    .hero-text-wrapper {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-name { font-size: 2.8rem; }
+    .hero-buttons { justify-content: center; }
+    .profile-img { width: 250px; height: 250px; }
 }
 
 /* =========================================
@@ -422,7 +485,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -519,37 +582,115 @@ footer {
 /* =========================================
    9. DYNAMIC RESEARCH STYLES
    ========================================= */
+/* Research Page Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-.featured-card {
+.card {
     background-color: var(--bg-card);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    border: 2px solid var(--accent-color);
-    animation: fadeIn 0.5s ease-in-out;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.clickable-card {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    opacity: 0.9;
-}
-
-.clickable-card:hover {
+.card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-color);
-    background-color: var(--bg-body);
-    opacity: 1;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.badge.review { background-color: #f1c40f; color: #000; }
-.badge.ready { background-color: #2ecc71; color: #fff; }
-.badge.progress { background-color: #3498db; color: #fff; }
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.card a {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: block;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Expanded Research Project (Active Card) */
+#featured-research {
+    margin-top: 3rem;
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+#featured-research h2 {
+    margin-bottom: 1rem;
+}
+
+#featured-research .carousel-container {
+    position: relative;
+}
+
+#featured-research .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 400px;
+    max-width: 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-color);
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    #featured-research .carousel-slide {
+        flex-direction: column;
+    }
 }
 
 /* =========================================
@@ -982,4 +1123,463 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
+}
+
+/* Bento Gallery Section */
+.bento-section {
+    padding: 4rem 10%;
+    margin-bottom: 3rem;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.bento-section:hover {
+    transform: translateY(-5px);
+}
+
+.bento-section h2 {
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.bento-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.bento-item {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bento-item img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.bento-item h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.bento-item p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.bento-item .btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bento-item .btn-primary:hover {
+    background-color: var(--text-main);
+    color: var(--accent-color);
+}
+/* Research Page Overhaul */
+
+/* Hero Section */
+.research-hero {
+    background: linear-gradient(to bottom, var(--bg-nav) 0%, var(--bg-main) 100%);
+    padding: 6rem 10%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Projects Section */
+.research-projects {
+    padding: 4rem 10%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.project-status.review { background: #f39c12; } /* Orange for review */
+.project-status.ready { background: #27ae60; } /* Green for ready */
+.project-status.progress { background: #3498db; } /* Blue for progress */
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.project-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: var(--bg-main);
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.close-modal:hover {
+    color: var(--text-main);
+}
+
+.modal-carousel {
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-color);
+}
+
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.modal-details ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.modal-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .research-hero {
+        padding: 4rem 5%;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .research-projects {
+        padding: 3rem 5%;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}/* Research Overhaul */
+.research-hero {
+    background: linear-gradient(to bottom, var(--bg-nav) 0%, var(--bg-main) 100%);
+    padding: 6rem 10%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.research-projects {
+    padding: 4rem 10%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    margin-bottom: 1rem;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.project-status.review { background: #f39c12; }
+.project-status.ready { background: #27ae60; }
+.project-status.progress { background: #3498db; }
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.project-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--bg-main);
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.close-modal:hover {
+    color: var(--text-main);
+}
+
+.modal-carousel {
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-color);
+}
+
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.modal-details ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.modal-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .research-hero { padding: 4rem 5%; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .research-projects { padding: 3rem 5%; }
+    .project-grid { grid-template-columns: 1fr; }
+    .modal-content { width: 95%; padding: 1.5rem; }
 }

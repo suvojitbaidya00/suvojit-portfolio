@@ -46,8 +46,8 @@ hiddenElements.forEach((el) => observer.observe(el));
 // =========================================
 //  DYNAMIC RESEARCH ENGINE
 // =========================================
+// --- Dynamic Research Engine --- 
 
-// Data from your CV with CORRECTED FILE EXTENSIONS
 const researchData = [
     {
         id: 0,
@@ -64,7 +64,7 @@ const researchData = [
             "assets/flyash2.png",
             "assets/flyash3.png",
             "assets/flyash4.png",
-            "assets/flyash5.png",       
+            "assets/flyash5.png"
         ]
     },
     {
@@ -77,10 +77,7 @@ const researchData = [
             "Modeled curved-crease Miura-Ori panels with varied crease radius.",
             "Analyzed Quasi-static and cyclic compression behavior focusing on SEA and hysteresis area."
         ],
-        images: [
-            "assets/origami1.png", 
-            "assets/origami2.png",  // Placeholder for 2nd image
-        ]
+        images: ["assets/origami1.png", "assets/origami2.png"]
     },
     {
         id: 2,
@@ -93,10 +90,10 @@ const researchData = [
             "Numerically studied various cell thickness in flexural test of honeycomb structures."
         ],
         images: [
-            "assets/acps3.png", // Note: This is a .jpg file
+            "assets/acps3.png",
             "assets/acps1.png",
             "assets/acps2.png",
-            "assets/acps4.png",
+            "assets/acps4.png"
         ]
     },
     {
@@ -110,12 +107,11 @@ const researchData = [
             "Measured SEA, plateau stress, and failure modes; validated with Ansys."
         ],
         images: [
-            "assets/oct5.png", // Note: .png
-            "assets/oct1.jpg", // Note: .jpg
-            "assets/oct2.jpg", // Note: .jpg
-            "assets/oct3.png", // Note: .png
-            "assets/oct4.png",  // Note: .png
-            
+            "assets/oct5.png",
+            "assets/oct1.jpg",
+            "assets/oct2.jpg",
+            "assets/oct3.png",
+            "assets/oct4.png"
         ]
     },
     {
@@ -134,27 +130,28 @@ const researchData = [
     }
 ];
 
-let activeProjectId = 0; // Default: Project 0 is featured
+// Initialize with the first project as the featured one
+let activeProjectId = 0;
 
+// Function to render the projects list and active project
 function renderProjects() {
     const featuredContainer = document.getElementById('featured-research');
     const listContainer = document.getElementById('research-list');
 
-    // Only run if these elements exist (i.e., we are on the research page)
+    // Check if the elements exist
     if (!featuredContainer || !listContainer) return;
 
     // Clear content
     featuredContainer.innerHTML = '';
     listContainer.innerHTML = '';
 
-    // 1. Render FEATURED Card (Active Project)
+    // Render the active (expanded) project
     const activeProject = researchData.find(p => p.id === activeProjectId);
-    
+
     featuredContainer.innerHTML = `
         <div class="card featured-card">
             <span class="badge ${activeProject.statusClass}">${activeProject.status}</span>
-            <h2 style="margin-top: 1rem;">${activeProject.title}</h2>
-            
+            <h2>${activeProject.title}</h2>
             <div class="carousel-container">
                 <div class="carousel-slide" id="featured-slide">
                     ${activeProject.images.map(img => `<img src="${img}" alt="Research Image" onerror="this.src='https://via.placeholder.com/800x400?text=Image+Not+Found'">`).join('')}
@@ -162,52 +159,46 @@ function renderProjects() {
                 <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                 <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
             </div>
-
             <ul>
                 ${activeProject.details.map(detail => `<li>${detail}</li>`).join('')}
             </ul>
         </div>
     `;
 
-    // 2. Render LIST Cards (Inactive Projects)
+    // Render the list of other projects (Bento-style cards)
     researchData.forEach(project => {
         if (project.id !== activeProjectId) {
             const card = document.createElement('div');
             card.className = 'card clickable-card';
-            // When clicked, make this project active and re-render
             card.onclick = () => {
                 activeProjectId = project.id;
-                renderProjects();
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll up to see the change
+                renderProjects(); // Re-render the projects list with the new active card
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top to see the change
             };
 
             card.innerHTML = `
-                <span class="badge ${project.statusClass}" style="font-size: 0.7rem;">${project.status}</span>
-                <h3 style="font-size: 1.1rem; margin-top: 0.5rem;">${project.title}</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">${project.desc}</p>
-                <small style="color: var(--accent-color); font-weight:bold; margin-top:1rem; display:block;">Click to View Details &rarr;</small>
+                <img src="${project.images[0]}" alt="${project.title}">
+                <h3>${project.title}</h3>
+                <p>${project.desc}</p>
             `;
             listContainer.appendChild(card);
         }
     });
-
-    // Reset carousel index for new project
-    slideIndex = 0; 
 }
 
-// --- Carousel Helper Logic ---
+// --- Carousel Logic --- 
 let slideIndex = 0;
 
-window.moveSlide = function(n) {
+function moveSlide(n) {
     const slide = document.getElementById('featured-slide');
     if (!slide) return;
-    
+
     const images = slide.getElementsByTagName('img');
-    
+
     if (!images || images.length === 0) return;
 
     const size = images[0].clientWidth;
-    
+
     slideIndex += n;
 
     if (slideIndex >= images.length) slideIndex = 0;
@@ -216,20 +207,11 @@ window.moveSlide = function(n) {
     slide.style.transform = 'translateX(' + (-size * slideIndex) + 'px)';
 }
 
-// --- Initial Render ---
+// --- Initial Render --- 
 document.addEventListener('DOMContentLoaded', () => {
-    renderProjects();
+    renderProjects(); // Render the projects list and the first project by default
 });
 
-// --- Contact Form Simulation ---
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for your message! This is a demo form. Please email me directly at suvojitbaidya00@gmail.com');
-        contactForm.reset();
-    });
-}
 // Certificate Modal
 const certModal = document.getElementById('cert-modal');
 const modalImg = document.getElementById('modal-cert-image');
