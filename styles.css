@@ -1583,3 +1583,42 @@ footer {
     .project-grid { grid-template-columns: 1fr; }
     .modal-content { width: 95%; padding: 1.5rem; }
 }
+/* =========================================
+   FIX: OVERRIDE FOR RESEARCH CAROUSEL
+   ========================================= */
+#featured-research .carousel-slide img {
+    height: 100% !important;        /* Forces full height */
+    object-fit: contain !important; /* Prevents cropping */
+    margin-bottom: 0;               /* Removes extra gap */
+    background-color: #ffffff;      /* CHANGED: White background */
+}
+
+/* =========================================
+   FIX: EXPERIENCE PAGE CARD LAYOUT
+   ========================================= */
+.card-body-flex img {
+    width: 300px !important;    /* Fixed width */
+    height: 200px !important;   /* Fixed height */
+    object-fit: contain;        /* Shows full image */
+    background-color: #ffffff;  /* CHANGED: White background */
+    border-radius: 8px;
+    flex-shrink: 0;             
+    order: 2;                   
+    border: 1px solid #eee;     /* Added a subtle border so white images don't disappear into the background */
+}
+
+.card-body-flex .card-text-content {
+    flex: 1;
+    order: 1;                   
+    min-width: 0;               
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .card-body-flex img {
+        width: 100% !important; 
+        height: auto !important;
+        margin-bottom: 1rem;
+        order: 1;              
+    }
+}

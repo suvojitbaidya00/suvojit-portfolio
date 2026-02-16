@@ -52,8 +52,8 @@ const researchData = [
     {
         id: 0,
         title: "Flyash-Reinforced Core of 3D-Printed PETG/WPLA Honeycomb Sandwich Structure",
-        status: "Under Review",
-        statusClass: "review",
+        status: "ACCEPTED FOR PUBLICATION",
+        statusClass: "accpeted",
         desc: "Experimental and Numerical Study on Flyash-Reinforced Core.",
         details: [
             "Simulated and validated force displacement and MOE of the sandwich structures.",
