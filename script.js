@@ -51,11 +51,12 @@ hiddenElements.forEach((el) => observer.observe(el));
 const researchData = [
     {
         id: 0,
-        title: "Flyash-Reinforced Core of 3D-Printed PETG/WPLA Honeycomb Sandwich Structure",
-        status: "ACCEPTED FOR PUBLICATION",
-        statusClass: "accpeted",
+        title: "Experimental and Numerical Study on Fly Ash-Reinforced Core of 3D Printed PETG/Wood-PLA Honeycomb Sandwich Composites",
+        status: "Published",
+        statusClass: "Published",
         desc: "Experimental and Numerical Study on Flyash-Reinforced Core.",
         details: [
+    
             "Simulated and validated force displacement and MOE of the sandwich structures.",
             "Analyzed energy absorption variation and failure modes with and without flyash-reinforcements."
         ],
