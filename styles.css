@@ -1623,22 +1623,18 @@ footer {
     }
 }
 /* =========================================
-   FIX: CERTIFICATE CARDS ON SKILLS PAGE
+   MAKE SKILLS CERTIFICATES BEHAVE LIKE HOME PAGE
    ========================================= */
-/* Target these specific cards so we override the general .card img rules */
-.card-grid .card.certificate-card img {
-    width: 100% !important;
-    height: auto !important; /* Lets the height naturally adjust to the image */
-    max-height: 250px !important; /* Prevents it from getting absurdly tall */
-    object-fit: contain !important; /* Shows the full image without cropping */
-    border-radius: 8px !important;
-    background-color: transparent !important; 
-    margin-bottom: 1rem !important;
+.certificate-card img {
+    height: auto !important;     /* Removes the strict 200px limit causing the problem */
+    aspect-ratio: 4 / 3;         /* Gives them a nice, consistent certificate shape */
+    object-fit: contain !important; /* Prevents cropping */
+    background-color: #ffffff !important; /* Fills empty space if the image isn't a perfect rectangle */
 }
 
-/* Optional: Make the cards themselves look better with contained images */
-.card-grid .card.certificate-card {
+/* Ensure the card adjusts to the new natural image size */
+.certificate-card {
+    height: auto !important;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
