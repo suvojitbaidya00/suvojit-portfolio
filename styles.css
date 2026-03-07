@@ -1622,3 +1622,23 @@ footer {
         order: 1;              
     }
 }
+/* =========================================
+   FIX: CERTIFICATE CARDS ON SKILLS PAGE
+   ========================================= */
+/* Target these specific cards so we override the general .card img rules */
+.card-grid .card.certificate-card img {
+    width: 100% !important;
+    height: auto !important; /* Lets the height naturally adjust to the image */
+    max-height: 250px !important; /* Prevents it from getting absurdly tall */
+    object-fit: contain !important; /* Shows the full image without cropping */
+    border-radius: 8px !important;
+    background-color: transparent !important; 
+    margin-bottom: 1rem !important;
+}
+
+/* Optional: Make the cards themselves look better with contained images */
+.card-grid .card.certificate-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
