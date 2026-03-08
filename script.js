@@ -74,15 +74,15 @@ const researchData = [
     },
     {
         id: 1,
-        title: "Miura-Ori Inspired Origami Structure",
+        title: "Effect of Radius of Curvature on the Energy Absorption of Miura-Ori Inspired Origami Structure",
         status: "Ready to Submit",
         statusClass: "ready",
         // --- NEW DATA FIELDS ---
         publisher: "", // Leave blank if not published yet
         doi: "", 
-        abstract: "An in-depth look at curved-crease Miura-Ori panels. This research explores how varying the crease radius affects structural behavior during quasi-static and cyclic compression.",
+        abstract: "This study examines how the radius of curvature influences the energy absorption, stiffness, and cyclic response of a Miura-Ori inspired origami structure fabricated from curved glass fiber reinforced polymer (GFRP) laminates. Through quasi-static and cyclic compression testing, the research evaluates the mechanical behavior of four curvature configurations and demonstrates how geometric tuning can significantly affect both one-time energy absorption and long-term repeatability. This work highlights the promise of combining origami-inspired geometry with composite laminates to develop lightweight and reusable energy-absorbing structures. By showing how curvature radius can be tuned to control stiffness, hysteresis behavior, and damage progression, the study provides a useful foundation for future applications in protective systems, automotive energy absorbers, vibration isolation, and deployable engineering structures.",
         // -----------------------
-        desc: "Experimental and numerical investigation on effect of radius of curvature.",
+        desc: "Miura-Ori Inspired Origami Structure of GFRP under static and cyclic compression",
         details: [
             "Modeled curved-crease Miura-Ori panels with varied crease radius.",
             "Analyzed Quasi-static and cyclic compression behavior focusing on SEA and hysteresis area."
@@ -91,13 +91,13 @@ const researchData = [
     },
     {
         id: 2,
-        title: "Bending Behavior of Honeycomb Sandwich Structures",
-        status: "Ready to Submit",
+        title: "Effect of Material Orientation and Core Geometry on Bending Behavior of PLA+ and ABS Based 3D Printed Honeycomb Sandwich Structure",
+        status: "Under Review",
         statusClass: "ready",
         // --- NEW DATA FIELDS ---
         publisher: "", 
         doi: "", 
-        abstract: "This project focuses on optimizing the Energy Absorption of honeycomb sandwich structures by investigating the interplay between material orientation and core geometry, utilizing both PLA+ and ABS.",
+        abstract: "This study investigates how material orientation and honeycomb core cell size influence the flexural performance of 3D-printed sandwich structures made from PLA+ and ABS. Using experimental three-point bending tests, tensile characterization, SEM-based failure analysis, and finite element modeling, the work evaluates how different skin-core material combinations affect flexural strength, stiffness, energy absorption, and load-bearing capacity. The results provide design insights for optimizing lightweight additively manufactured sandwich structures for structural applications..",
         // -----------------------
         desc: "Effect of Material Orientation and Core Geometry (PLA+ and ABS-based).",
         details: [
@@ -113,15 +113,15 @@ const researchData = [
     },
     {
         id: 3,
-        title: "Octopus Suction-Cup-Inspired Sandwich Cores",
+        title: "An Experimental and Numerical Study on Flexural Behavior of Octopus Suction-Cup-Inspired Additively Manufactured Sandwich Cores",
         status: "In Progress",
         statusClass: "progress",
         // --- NEW DATA FIELDS ---
         publisher: "", 
         doi: "", 
-        abstract: "Drawing inspiration from nature, this research explores bio-inspired cores mimicking octopus suction cups. The inner-cavity effects on flexural and compressive behavior are measured and validated using Ansys.",
+        abstract: "This study explores a bio-inspired sandwich core architecture derived from the geometry of octopus suction cups and examines how that natural form can be adapted for lightweight structural applications. Motivated by the broader promise of biomimicry in engineering, the research investigates whether octopus-inspired core features can improve flexural response, deformation control, and energy absorption in additively manufactured sandwich structures. To address this, three geometric variants were developed and evaluated experimentally and numerically under three-point bending.While prior studies largely examined octopus-inspired structures for adhesion or isolated compression behavior, this work extends that inspiration to a load-bearing sandwich system, showing how biomimetic geometry can influence internal load-transfer paths, local stress concentration, and progressive collapse behavior. ",
         // -----------------------
-        desc: "Inner-cavity effects on flexural and compressive behavior.",
+        desc: "Inner-cavity effects on flexural behavior.",
         details: [
             "Generated bio-inspired cores with tunable cavity diameter and shell thickness.",
             "Measured SEA, plateau stress, and failure modes; validated with Ansys."
