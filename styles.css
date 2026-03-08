@@ -1597,8 +1597,8 @@ footer {
    FIX: EXPERIENCE PAGE CARD LAYOUT
    ========================================= */
 .card-body-flex img {
-    width: 300px !important;    /* Fixed width */
-    height: 200px !important;   /* Fixed height */
+    width: 400px !important;    /* Fixed width */
+    height: 300px !important;   /* Fixed height */
     object-fit: contain;        /* Shows full image */
     background-color: #ffffff;  /* CHANGED: White background */
     border-radius: 8px;

@@ -55,7 +55,7 @@ const researchData = [
         status: "Published",
         statusClass: "Published",
         // --- NEW DATA FIELDS ---
-        publisher: "AJSE", 
+        publisher: "Arabian Journal for Science and Engineering", 
         doi: "doi.org/10.1007/s13369-026-11182-5",
         abstract: "This study presents an experimental and numerical investigation of 3D-printed PETG and wood-PLA honeycomb sandwich composites reinforced with fly ash geopolymer composite (FAGC). The research demonstrates that integrating a sustainable geopolymer filler into additively manufactured honeycomb cores can significantly improve compressive performance and thermal insulation, while also revealing an important trade-off in flexural behavior due to weak interfacial bonding and brittle filler response. The findings contribute to the development of lightweight, multifunctional composite materials for structural and thermally insulated applications.",
         // -----------------------
@@ -192,7 +192,7 @@ ${activeProject.publisher || activeProject.doi ? `
                 </span>` : ''}
 
             </div>` : ''}
-
+            
             <div class="carousel-container">
                 <div class="carousel-slide" id="featured-slide">
                     ${activeProject.images.map(img => `<img src="${img}" alt="Research Image" onerror="this.src='https://via.placeholder.com/800x400?text=Image+Not+Found'">`).join('')}
