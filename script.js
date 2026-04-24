@@ -87,7 +87,7 @@ const researchData = [
             "Modeled curved-crease Miura-Ori panels with varied crease radius.",
             "Analyzed Quasi-static and cyclic compression behavior focusing on SEA and hysteresis area."
         ],
-        images: ["assets/origami1.png", "assets/origami2.png"]
+        images: ["assets/origami1.png", "assets/origami2.png", "assets/origami3.png"]
     },
     {
         id: 2,
