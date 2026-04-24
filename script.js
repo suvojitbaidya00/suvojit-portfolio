@@ -129,7 +129,7 @@ const researchData = [
         images: [
             "assets/oct5.png",
             "assets/oct1.jpg",
-            "assets/oct2.jpg",
+            "assets/oct2.png",
             "assets/oct3.png",
             "assets/oct4.png"
         ]
