@@ -10,25 +10,30 @@ if (hamburger) {
 
 // --- Dark Mode Toggle ---
 const toggleButton = document.getElementById('theme-toggle');
+const toggleIcon = toggleButton ? toggleButton.querySelector('i') : null;
 const currentTheme = localStorage.getItem('theme');
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') toggleButton.classList.replace('fa-moon', 'fa-sun');
+    if (currentTheme === 'dark' && toggleIcon) {
+        toggleIcon.classList.replace('fa-moon', 'fa-sun');
+    }
 }
 
-toggleButton.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        toggleButton.classList.replace('fa-sun', 'fa-moon');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggleButton.classList.replace('fa-moon', 'fa-sun');
-    }
-});
+if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            if (toggleIcon) toggleIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            if (toggleIcon) toggleIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+    });
+}
 
 // --- Scroll Animations ---
 const observer = new IntersectionObserver((entries) => {
@@ -275,19 +280,21 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects(); // Render the projects list and the first project by default
 });
 
-// Certificate Modal
+// Certificate Modal — only runs on pages that have the modal (skills.html)
 const certModal = document.getElementById('cert-modal');
 const modalImg = document.getElementById('modal-cert-image');
 const closeBtn = document.querySelector('.modal-close');
 
-document.querySelectorAll('.certificate-card').forEach(card => {
-    card.addEventListener('click', () => {
-        modalImg.src = card.getAttribute('data-src');
-        certModal.style.display = 'flex';
+if (certModal && modalImg && closeBtn) {
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        card.addEventListener('click', () => {
+            modalImg.src = card.getAttribute('data-src');
+            certModal.style.display = 'flex';
+        });
     });
-});
 
-closeBtn.addEventListener('click', () => certModal.style.display = 'none');
-certModal.addEventListener('click', e => {
-    if (e.target === certModal) certModal.style.display = 'none';
-});
+    closeBtn.addEventListener('click', () => certModal.style.display = 'none');
+    certModal.addEventListener('click', e => {
+        if (e.target === certModal) certModal.style.display = 'none';
+    });
+}
