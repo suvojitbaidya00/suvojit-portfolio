@@ -70,11 +70,11 @@ const researchData = [
             "Analyzed energy absorption variation and failure modes with and without flyash-reinforcements."
         ],
         images: [
-            "assets/flyash1.png",
-            "assets/flyash2.png",
-            "assets/flyash3.png",
-            "assets/flyash4.png",
-            "assets/flyash5.png"
+            "assets/flyash1.webp",
+            "assets/flyash2.webp",
+            "assets/flyash3.webp",
+            "assets/flyash4.webp",
+            "assets/flyash5.webp"
         ]
     },
     {
@@ -92,7 +92,7 @@ const researchData = [
             "Modeled curved-crease Miura-Ori panels with varied crease radius.",
             "Analyzed Quasi-static and cyclic compression behavior focusing on SEA and hysteresis area."
         ],
-        images: ["assets/origami1.png", "assets/origami2.png", "assets/origami3.png"]
+        images: ["assets/origami1.webp", "assets/origami2.webp", "assets/origami3.webp"]
     },
     {
         id: 2,
@@ -110,10 +110,10 @@ const researchData = [
             "Numerically studied various cell thickness in flexural test of honeycomb structures."
         ],
         images: [
-            "assets/acps3.png",
-            "assets/acps1.png",
-            "assets/acps2.png",
-            "assets/acps4.png"
+            "assets/acps3.webp",
+            "assets/acps1.webp",
+            "assets/acps2.webp",
+            "assets/acps4.webp"
         ]
     },
     {
@@ -132,9 +132,9 @@ const researchData = [
             "Measured SEA, plateau stress, and failure modes; validated with Ansys."
         ],
         images: [
-            "assets/oct5.png",
-            "assets/oct2.png",
-            "assets/oct4.png"
+            "assets/oct5.webp",
+            "assets/oct2.webp",
+            "assets/oct4.webp"
         ]
     },
     {
